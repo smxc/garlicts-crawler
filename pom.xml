@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.garlicts</groupId>
-  <artifactId>garlicts-crawler</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>com.garlicts</groupId>
+	<artifactId>garlicts-crawler</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>garlicts-crawler</name>
-  <url>http://maven.apache.org</url>
+	<name>garlicts-crawler</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<build>
 		<plugins>
@@ -57,7 +57,7 @@
 			<id>aliyun.maven</id>
 			<name>aliyun maven</name>
 			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-		</repository>	
+		</repository>
 		<repository>
 			<id>apache.maven</id>
 			<name>uk maven</name>
@@ -91,5 +91,18 @@
 			<url>http://repository.jboss.org/nexus/content/repositories/releases</url>
 		</pluginRepository>
 	</pluginRepositories>
-	
+
+	<dependencies>
+		<dependency>
+			<groupId>net.sourceforge.htmlunit</groupId>
+			<artifactId>htmlunit</artifactId>
+			<version>2.30</version>
+		</dependency>
+		<dependency>
+			<groupId>com.garlicts</groupId>
+			<artifactId>garlicts-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
 </project>
