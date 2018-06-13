@@ -15,6 +15,7 @@ import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.WebWindow;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
+import com.garlicts.framework.ioc.BeanContainerComponent;
 import com.garlicts.framework.util.MapUtil;
 import com.garlicts.framework.util.StringUtil;
 
@@ -23,13 +24,15 @@ public abstract class HtmlUnitCrawler {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HtmlUnitCrawler.class);
 	
 	// HttpUnit WebClient的对象池
-	WebClientPool webClientPool;
+//	WebClientPool webClientPool = BeanContainerComponent.getBean(WebClientPool.class);
 	
-	public HtmlUnitCrawler(){
-		webClientPool = new WebClientPool();
-	}
+//	public HtmlUnitCrawler(){
+//		webClientPool = new WebClientPool();
+//	}
 	
 	private WebClient create(){
+		
+		WebClientPool webClientPool = BeanContainerComponent.getBean(WebClientPool.class);
 		
 		WebClient webClient = null;
 		
@@ -72,6 +75,7 @@ public abstract class HtmlUnitCrawler {
 		} 
 		
 		finally {
+			WebClientPool webClientPool = BeanContainerComponent.getBean(WebClientPool.class);
 			webClientPool.returnObject(webClient);
 		}
 		

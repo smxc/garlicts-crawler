@@ -30,7 +30,7 @@ public class WebClientFactory extends BasePooledObjectFactory<WebClient> {
 		// 让游览行为被记录
 		webClient.getOptions().setDoNotTrackEnabled(true);
 		// 设置JS后台等待执行时间
-		webClient.waitForBackgroundJavaScript(30000);		
+//		webClient.waitForBackgroundJavaScript(30000);
 		// 启用ajax支持
 		webClient.setAjaxController(new NicelyResynchronizingAjaxController());
 		
