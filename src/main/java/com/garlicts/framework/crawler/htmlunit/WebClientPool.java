@@ -9,5 +9,11 @@ public class WebClientPool extends GenericObjectPool<WebClient> {
 	public WebClientPool() {
 		super(new WebClientFactory(), new WebClientPoolConfig());
 	}
+	
+	static WebClientPool webClientPool = new WebClientPool();
+	
+	public static WebClientPool getInstance() {
+		return webClientPool; 
+	}
 
 }
